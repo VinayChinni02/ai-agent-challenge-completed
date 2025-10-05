@@ -39,29 +39,9 @@ ai-agent-challenge/
 
 ## 🔄 Agent Workflow Diagram ##
 
- ┌─────────────┐
- │   Planner   │  (decide what code to write)
- └─────┬───────┘
-       │
-       ▼
- ┌─────────────┐
- │ Code Writer │  (writes parser into custom_parsers/)
- └─────┬───────┘
-       │
-       ▼
- ┌─────────────┐
- │   Tester    │  (runs pytest to validate parser)
- └─────┬───────┘
-       │
-       ▼
- ┌─────────────┐
- │   Refiner   │  (fixes code if tests fail, retries ≤3)
- └─────┬───────┘
-       │
-       ▼
- ┌─────────────┐
- │   Success   │  ✅ Parser passes all tests!
- └─────────────┘
+
+ <img width="754" height="675" alt="image" src="https://github.com/user-attachments/assets/c6c600fc-4e0c-4b9a-893f-6b58bed26646" />
+
 
 ## 🏃 Run Instructions ##
 1. Clone Repo
