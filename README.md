@@ -39,14 +39,35 @@ ai-agent-challenge/
 
 ## 🔄 Agent Workflow Diagram ##
 
-
- <img width="754" height="675" alt="image" src="https://github.com/user-attachments/assets/c6c600fc-4e0c-4b9a-893f-6b58bed26646" />
+ ┌─────────────┐
+ │   Planner   │  (decide what code to write)
+ └─────┬───────┘
+       │
+       ▼
+ ┌─────────────┐
+ │ Code Writer │  (writes parser into custom_parsers/)
+ └─────┬───────┘
+       │
+       ▼
+ ┌─────────────┐
+ │   Tester    │  (runs pytest to validate parser)
+ └─────┬───────┘
+       │
+       ▼
+ ┌─────────────┐
+ │   Refiner   │  (fixes code if tests fail, retries ≤3)
+ └─────┬───────┘
+       │
+       ▼
+ ┌─────────────┐
+ │   Success   │  ✅ Parser passes all tests!
+ └─────────────┘
 
 
 ## 🏃 Run Instructions ##
 1. Clone Repo
-   git clone https://github.com/VinayChinni02/ai-agent-challenge-completed.git
-   cd ai-agent-challenge-completed
+   git clone <your-fork-url>
+   cd ai-agent-challenge
 
 2.Create virtual environment
 
@@ -55,7 +76,6 @@ source .venv/bin/activate   # Mac/Linux
 .venv\Scripts\activate      # Windows
 
 3.Install dependencies
-
  pip install -r requirements.txt 
 
 4.Run the agent
